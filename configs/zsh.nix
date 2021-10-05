@@ -5,7 +5,7 @@
   	shellAliases = {
     		ll = "ls -l";
     		update = "sudo nixos-rebuild switch";
-    		nixconfig = "nvim /etc/nixos/configuration.nix";
+    		nixconfig = "sudo nvim /etc/nixos/configuration.nix";
 		homeconfig = "cd ~/.config/nixpkgs";
   	};
 
