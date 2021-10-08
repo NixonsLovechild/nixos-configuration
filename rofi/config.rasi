@@ -1,0 +1,81 @@
+configuration {
+    display-drun:                   "Apps";
+    display-window:                 "Window";
+    modi:                           "window,drun,ssh,combi,run";
+    show-icons:true;
+}
+
+element-icon {
+  margin: 3px 15px 0 0;
+  size: 20;
+}
+
+* {
+    lines: 15;
+    columns: 1;
+    border-color: #00000000;
+    font: "PragmataPro Mono Liga 16";
+    background:                  #222222ED;
+    foreground:                  #fbf1c7;
+    alternate-normal-background: #222222ED;
+    alternate-normal-foreground: #fbf1c7;
+    selected-normal-background:  #98971a;
+}
+
+window {
+    border: 0;
+    border-radius: 4px;
+    padding: 50;
+    width: 28%;
+    height: 50%;
+    opacity: "90";
+}
+
+mainbox {
+    background-color: #00033300;
+    children: [inputbar, listview];
+    spacing: 10px;
+    padding: 30px 0;
+    border: 1px;
+    border-color: @base0D;
+}
+
+
+listview {
+    background-color: #00000000;
+    fixed-height: 0;
+    border: 0px;
+    spacing: 5px;
+    scrollbar: false;
+    padding: 10px 10px 0px;
+}
+
+element {
+    background-color: #00000000;
+    border: 0;
+    border-radius: 15px;
+    padding: 5 0  5 10 ;
+}
+
+element selected {
+    background: #98971aff;
+    text-color: #fbf1c7;
+}
+
+inputbar {
+    children:   [entry,case-indicator];
+    background-color: #00000000;
+    padding: 0 0 0 14;
+}
+
+case-indicator {
+    background-color: #00000000;
+	text-color: #ebdbb2;
+    spacing:    0;
+}
+
+entry {
+    background-color: #00000000;
+    spacing:    0;
+	placeholder: "";
+}

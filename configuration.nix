@@ -38,6 +38,7 @@
     keyMap = "us";
    };
 
+  services.gvfs.enable = true;
   # XSERVER
   services.xserver = {
   #.libinput.enable = true; # LAPTOP SERVICE
@@ -87,11 +88,14 @@
 	};
 	pathsToLink = ["/libexec"];
 	systemPackages = with pkgs; [
-	    		(pkgs.writeShellScriptBin "nixFlakes" ''
-      				exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
-    			'')
+	    		# (pkgs.writeShellScriptBin "nixFlakes" ''
+      			#		exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
+    			#	'')
+			psutils
 			usbutils
 			pciutils
+			playerctl
+			gvfs
      			vim 
 			pavucontrol
 			gitAndTools.gitFull
@@ -103,11 +107,10 @@
 };
 
 	nix = { 
-		package = pkgs.nixUnstable;
-		extraOptions = ''
-			experimential-features = nix-command flakes
-		'';
-
+	#	package = pkgs.nixUnstable;
+	#	extraOptions = ''
+	#			experimental-features = nix-command flakes
+	#	 '';
 		allowedUsers = [ "@wheel" "nixon" ];
 		trustedUsers = [ "nixon" ];
 	};

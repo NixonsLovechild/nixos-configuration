@@ -1,12 +1,16 @@
 { pkgs, ...}: {
  # .zshenv
 	programs.zsh = {
+	initExtra = ''
+    	any-nix-shell zsh --info-right | source /dev/stdin
+  	'';
 	  enable = true;
   	shellAliases = {
     		ll = "ls -l";
     		update = "sudo nixos-rebuild switch";
     		nixconfig = "sudo nvim /etc/nixos/configuration.nix";
 		homeconfig = "cd ~/.config/nixpkgs";
+		vim = "nvim";
   	};
 
   	history = {
@@ -15,7 +19,7 @@
 
 	oh-my-zsh = { 
 		enable = true;
-		plugins = [ "git" "thefuck" ];
+		plugins = [ "git" ];
 		theme = "duellj";
 	};
 };

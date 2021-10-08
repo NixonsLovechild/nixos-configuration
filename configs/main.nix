@@ -10,6 +10,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
+ ./compton.nix
  ./zsh.nix
  ./alacritty.nix
 ];

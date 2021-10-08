@@ -5,7 +5,6 @@ let
   default-python = python3.withPackages (python-packages:
     with python-packages; [
       pip
-      thefuck
       black
       flake8
       setuptools
@@ -17,11 +16,21 @@ let
 
 in {
   home.packages = with pkgs; [
+
+   # X11/I3 ENVIRONMENT
+   rofi
+   dunst
+   arandr
+   pango
+   nitrogen
+
+
+
    # MISC
-    arandr
     haskellPackages.network-manager-tui
     bitwarden
-    firefox-devedition-bin
+    nerdfonts
+    ripgrep
 
     # TERMINAL
     zsh
@@ -36,11 +45,9 @@ in {
     zip
     unrar
     unzip
-    escrotum
     tree
     aria2
     imagemagick
-    feh
 
     # DEVELOPMENT
     # BREATHE DEEPLY BEFORE TACKLING JAVASCRIPT SON
@@ -53,6 +60,11 @@ in {
     binutils
     rustup
 
+    #webdev
+    firefox-devedition-bin
+    epiphany
+    google-chrome
+
     # ESSENTIAL
     pavucontrol
     discord
@@ -61,6 +73,7 @@ in {
     spotify
     blueman
     obs-studio
+    pcmanfm
 
     # THIS SOUNDS COOL
     cachix

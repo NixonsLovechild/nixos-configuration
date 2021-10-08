@@ -2,10 +2,17 @@
 
 {
   programs.home-manager.enable = true;
-  home.username = "nixon";
-  home.homeDirectory = "/home/nixon";
-  imports = [ ./packages/main.nix ./configs/main.nix];
-  nixpkgs.overlays = [ (import ./overlays/main.nix) ];
 
-  home.stateVersion = "21.05";
+  imports = [ ./packages/main.nix ./configs/main.nix ];
+
+  home = {
+  	username = "nixon";
+  	homeDirectory = "/home/nixon";
+	stateVersion = "21.05";
+	};
+
+
+  nixpkgs = {
+ 	 overlays = [ (import ./overlays/main.nix) ];
+  };
 }
